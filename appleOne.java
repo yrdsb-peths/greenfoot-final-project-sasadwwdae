@@ -1,16 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Apple here.
+ * Write a description of class AppleOne here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Apple extends Actor
+public class appleOne extends Actor
 {
     int speed = 2;
     /**
-     * Act - do whatever the apple wants to do. This method is called whenever
+     * Act - do whatever the appleOne wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
