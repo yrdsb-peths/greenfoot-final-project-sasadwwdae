@@ -18,22 +18,23 @@ public class Car extends Actor
     {
         // Add your action code here.
         setLocation(getX()-speed,getY());
+        if(isTouching(appleOne.class))
+        {
+            
+        }
         
         if(getX() <= 0)
         {
             MyWorld world = (MyWorld) getWorld();
             world.createCar();
-        }
-        
-        if(isTouching(appleOne.class))
-        {
-            
+            world.removeObject(this);
         }
     }
     
     public void setSpeed(int spd)
     {
         speed = spd;
+        speed = 7;
     }
     
 }

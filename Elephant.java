@@ -29,9 +29,10 @@ public class Elephant extends Actor
         }
         if(Greenfoot.isKeyDown("a"))
         {
-            setLocation(getX()+3,getY());
+            setLocation(getX()-3,getY());
         }
         eat();
+        resetLocation();
     }
     
     public void eat()
@@ -59,4 +60,27 @@ public class Elephant extends Actor
                 world.removeObject(this);
             }
         }
+    
+    public void resetLocation()
+    {
+        if(getX() <= 0)
+        {
+            setLocation(getX()+10,getY());
+        }
+        
+        if(getX() >= 800)
+        {
+            setLocation(getX()-10,getY());
+        }
+        
+        if(getY() >= 600)
+        {
+            setLocation(getX(),getY()-10);
+        }
+        
+        if(getY() <= 0)
+        {
+            setLocation(getX(),getY()+10);
+        }
+    }
 }
