@@ -30,6 +30,7 @@ public class MyWorld extends World
         createApple();
         createAppleOne();
         createCar();
+        createGreenApple();
     }
     
     public void gameOver()
@@ -45,6 +46,18 @@ public class MyWorld extends World
         if(score % 10 == 0)
         {
             level += 1;
+            createBanana();
+        }
+    }
+    
+    public void decreaseScore()
+    {
+        score--;
+        scoreLabel.setValue(score);
+        if(score % 10 == 0)
+        {
+            level += 1;
+            createBanana();
         }
     }
     
@@ -72,9 +85,25 @@ public class MyWorld extends World
         int y = Greenfoot.getRandomNumber(600);
         int x = (800);
         car.setSpeed(level);
-        addObject(car,x,y);
+        addObject(car,x,y); 
     }
     
+    public void createBanana()
+    {
+        Banana banana = new Banana();
+        int y = Greenfoot.getRandomNumber(600);
+        int x = (800);
+        addObject(banana,x,y);
+    }
+    
+    public void createGreenApple()
+    {
+        GreenApple greenApple = new GreenApple();
+        int y = Greenfoot.getRandomNumber(600);
+        int x = (800);
+        addObject(greenApple,x,y);
+    }
+
     public void act()
     {
         if(Greenfoot.isKeyDown("space"))

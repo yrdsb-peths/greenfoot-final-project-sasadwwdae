@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Elephant extends Actor
 {
+    int speed = 3;
     /**
      * Act - do whatever the Elephant wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -17,19 +18,19 @@ public class Elephant extends Actor
         // Add your action code here.
         if(Greenfoot.isKeyDown("w"))
         {
-            setLocation(getX(),getY()-3);
+            setLocation(getX(),getY()-speed);
         }
         else if(Greenfoot.isKeyDown("s"))
         {
-            setLocation(getX(),getY()+3);
+            setLocation(getX(),getY()+speed);
         }
         if(Greenfoot.isKeyDown("d"))
         {
-            setLocation(getX()+3,getY());
+            setLocation(getX()+speed,getY());
         }
         if(Greenfoot.isKeyDown("a"))
         {
-            setLocation(getX()-3,getY());
+            setLocation(getX()-speed,getY());
         }
         eat();
         resetLocation();
@@ -37,27 +38,33 @@ public class Elephant extends Actor
     
     public void eat()
         {
+            MyWorld world = (MyWorld) getWorld();
+            
             if(isTouching(Apple.class))
             {
                 removeTouching(Apple.class);
-                MyWorld world = (MyWorld) getWorld();
                 world.createApple();
                 world.increaseScore();
             }
+            
             if(isTouching(appleOne.class))
             {
                 removeTouching(appleOne.class);
-                MyWorld world = (MyWorld) getWorld();
                 world.createAppleOne();
                 world.increaseScore();
             }
             
-            MyWorld world = (MyWorld) getWorld();
-            
-            if(isTouching(Car.class))
+            if(isTouching(Banana.class))
             {
-                world.gameOver();
-                world.removeObject(this);
+                removeTouching(Banana.class);
+                speed+=1;
+            }
+            
+            if(isTouching(GreenApple.class))
+            {
+                removeTouching(GreenApple.class);
+                world.createGreenApple();
+                world.decreaseScore();
             }
         }
     
