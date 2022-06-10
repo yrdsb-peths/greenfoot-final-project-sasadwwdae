@@ -22,11 +22,10 @@ public class Car extends Actor
         
         if(getX() <= 0)
         {
-            world.removeObject(this);
             world.createCar();
+            world.removeObject(this);
         }
-        
-        if(isTouching(Elephant.class))
+        else if(isTouching(Elephant.class))
         {
             world.gameOver();
             world.removeObject(this);

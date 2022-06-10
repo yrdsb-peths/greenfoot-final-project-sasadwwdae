@@ -21,7 +21,7 @@ public class GreenApple extends Actor
         MyWorld world = (MyWorld) getWorld();
         if(getX() <= 0)
         {
-            world.gameOver();
+            world.createGreenApple();
             world.removeObject(this);
         }
     }

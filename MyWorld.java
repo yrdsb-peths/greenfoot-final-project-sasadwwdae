@@ -31,6 +31,7 @@ public class MyWorld extends World
         createAppleOne();
         createCar();
         createGreenApple();
+        createSnake();
     }
     
     public void gameOver()
@@ -102,6 +103,14 @@ public class MyWorld extends World
         int y = Greenfoot.getRandomNumber(600);
         int x = (800);
         addObject(greenApple,x,y);
+    }
+    
+    public void createSnake()
+    {
+        Snake snake = new Snake();
+        int y = Greenfoot.getRandomNumber(600);
+        int x = (800);
+        addObject(snake,x,y);
     }
 
     public void act()

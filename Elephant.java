@@ -66,6 +66,13 @@ public class Elephant extends Actor
                 world.createGreenApple();
                 world.decreaseScore();
             }
+            
+            if(isTouching(Snake.class))
+            {
+                removeTouching(Snake.class);
+                speed-=1;
+                world.createSnake();
+            }
         }
     
     public void resetLocation()
