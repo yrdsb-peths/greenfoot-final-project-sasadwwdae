@@ -9,6 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Elephant extends Actor
 {
     int speed = 3;
+    GreenfootSound elephantSound = new GreenfootSound("Elephant.mp3");
+    GreenfootSound BreakSound = new GreenfootSound("Break.mp3");
     /**
      * Act - do whatever the Elephant wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -45,6 +47,7 @@ public class Elephant extends Actor
                 removeTouching(Apple.class);
                 world.createApple();
                 world.increaseScore();
+                elephantSound.play();
             }
             
             if(isTouching(appleOne.class))
@@ -52,12 +55,14 @@ public class Elephant extends Actor
                 removeTouching(appleOne.class);
                 world.createAppleOne();
                 world.increaseScore();
+                elephantSound.play();
             }
             
             if(isTouching(Banana.class))
             {
                 removeTouching(Banana.class);
                 speed+=1;
+                elephantSound.play();
             }
             
             if(isTouching(GreenApple.class))
@@ -65,6 +70,7 @@ public class Elephant extends Actor
                 removeTouching(GreenApple.class);
                 world.createGreenApple();
                 world.decreaseScore();
+                BreakSound.play();
             }
             
             if(isTouching(Snake.class))
@@ -72,6 +78,7 @@ public class Elephant extends Actor
                 removeTouching(Snake.class);
                 speed-=1;
                 world.createSnake();
+                BreakSound.play();
             }
         }
     

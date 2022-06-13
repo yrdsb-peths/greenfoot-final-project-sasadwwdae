@@ -10,6 +10,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Car extends Actor
 {
     int speed = 3;
+    GreenfootSound BombSound = new GreenfootSound("Bomb.mp3");
     /**
      * Act - do whatever the Car wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -29,6 +30,7 @@ public class Car extends Actor
         {
             world.gameOver();
             world.removeObject(this);
+            BombSound.play();
         }
     }
     
