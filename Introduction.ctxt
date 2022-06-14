@@ -4,4 +4,6 @@ comment0.text=\n\ Write\ a\ description\ of\ class\ Introduction\ here.\n\ \n\ @
 comment1.params=
 comment1.target=Introduction()
 comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Introduction.\n\ \n
-numComments=2
+comment2.params=
+comment2.target=void\ intro()
+numComments=3
