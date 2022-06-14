@@ -76,10 +76,17 @@ dependency8.type=UsesDependency
 dependency9.from=MyWorld
 dependency9.to=Banana
 dependency9.type=UsesDependency
+<<<<<<< Updated upstream
 editor.fx.0.height=728
 editor.fx.0.width=800
 editor.fx.0.x=0
 editor.fx.0.y=72
+=======
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+>>>>>>> Stashed changes
 height=751
 package.numDependencies=22
 package.numTargets=12
