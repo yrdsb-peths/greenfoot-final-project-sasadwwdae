@@ -13,6 +13,7 @@ public class MyWorld extends World
     public int score; 
     Label scoreLabel;
     int level = 1;
+    GreenfootSound Background = new GreenfootSound("BackgroundMusic.mp3");
     /**
      * Constructor for objects of class Myworld.
      * 
@@ -37,6 +38,8 @@ public class MyWorld extends World
         createCar();
         createGreenApple();
         createSnake();
+        
+        Background.play();
     }
     
     public void gameOver()
@@ -126,4 +129,5 @@ public class MyWorld extends World
             Greenfoot.setWorld(gameWorld);
         }
     }
+    
 }
