@@ -35,14 +35,13 @@ public class TheTitle extends World
             MyWorld gameWorld = new MyWorld();
             Greenfoot.setWorld(gameWorld);
         }
-    }
-    
-    public void intro()
-    {
         if(Greenfoot.isKeyDown("f"))
         {
-            MyWorld gameWorld = new MyWorld();
-            Greenfoot.setWorld(gameWorld);
+            Introduction introWorld = new Introduction();
+            Greenfoot.setWorld(introWorld);
         }
+        
     }
+    
+    
 }
