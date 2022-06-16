@@ -22,6 +22,12 @@ public class Introduction extends World
         setBackground(bgImage);
     }
     
+    public void introOne()
+    {
+        Label introOneLabel = new Label("In this game try you best to catch the apple",30);
+        addObject(introOneLabel,40,200);
+    }
+    
     public void intro()
     {
         if(Greenfoot.isKeyDown("f"))
