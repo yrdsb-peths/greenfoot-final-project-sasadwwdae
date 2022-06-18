@@ -16,15 +16,25 @@ public class GameOver extends World
     public GameOver()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(800, 600, 1); 
+        super(800, 600, 1);
+        //get the back ground
         GreenfootImage bgImage = new GreenfootImage("images/download.jpeg");
         bgImage.scale(getWidth(), getHeight());
         setBackground(bgImage);
+        
+        Label end = new Label("Game Over", 70);
+        addObject(end,400,300);
+
+        Label finalScoreLable1 = new Label("press space restart the game", 50);
+        addObject(finalScoreLable1,400,370);
     }
     
-    public void gameOver()
+    public void act()
     {
-        Label gameOverLabel = new Label("Game Over",100);
-        addObject(gameOverLabel,400,300);
+        if(Greenfoot.isKeyDown("space"))
+        {
+            MyWorld gameWorld = new MyWorld();
+            Greenfoot.setWorld(gameWorld);
+        }
     }
 }

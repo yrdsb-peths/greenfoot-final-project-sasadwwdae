@@ -16,6 +16,7 @@ public class appleOne extends Actor
     public void act()
     {
         // Add your action code here.
+        //let apple move
         setLocation(getX()-speed,getY());
         
         MyWorld world = (MyWorld) getWorld();

@@ -8,8 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
-
     public int score; 
     Label scoreLabel;
     int level = 1;
@@ -22,32 +20,37 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1,false); 
-        
+        //get the back ground
         GreenfootImage bgImage = new GreenfootImage("images/download.jpeg");
         bgImage.scale(getWidth(), getHeight());
         setBackground(bgImage);
-        
+        //create elephant class
         Elephant elephant = new Elephant();
         addObject(elephant,100,300);
-        
+        //print the score you get
         scoreLabel = new Label(0, 80);
         addObject(scoreLabel,50,50);
-        
+        //create other class
         createApple();
         createAppleOne();
         createCar();
         createGreenApple();
         createSnake();
-        
+        //the background music
         Background.play();
     }
-    
+    //
+    //let others know how to end the game
+    //
     public void gameOver()
     {
-        Label gameOverLabel = new Label("Game Over:",100);
-        addObject(gameOverLabel,300,200);
+        Label gameOverLabel = new Label("Game Over(press space)",80);
+        addObject(gameOverLabel,400,300);
+        
     }
-    
+    //
+    //add the score 
+    //
     public void increaseScore()
     {
         score++;
@@ -58,7 +61,9 @@ public class MyWorld extends World
             createBanana();
         }
     }
-    
+    //
+    //decrease the score 
+    //
     public void decreaseScore()
     {
         score--;
@@ -69,7 +74,9 @@ public class MyWorld extends World
             createBanana();
         }
     }
-    
+    //
+    //create apple class 
+    //
     public void createApple()
     {
         Apple apple = new Apple();
@@ -78,7 +85,9 @@ public class MyWorld extends World
         apple.setSpeed(level);
         addObject(apple,x,y);
     }
-    
+    //
+    //create another apple class 
+    //
     public void createAppleOne()
     {
         appleOne appleOne = new appleOne();
@@ -87,7 +96,9 @@ public class MyWorld extends World
         appleOne.setSpeed(level);
         addObject(appleOne,x,y);
     }
-    
+    //
+    //create the car class
+    //
     public void createCar()
     {
         Car car = new Car();
@@ -96,7 +107,9 @@ public class MyWorld extends World
         car.setSpeed(level);
         addObject(car,x,y); 
     }
-    
+    //
+    //create the banana class
+    //
     public void createBanana()
     {
         Banana banana = new Banana();
@@ -104,7 +117,9 @@ public class MyWorld extends World
         int x = (800);
         addObject(banana,x,y);
     }
-    
+    //
+    //create the greenapple class
+    //
     public void createGreenApple()
     {
         GreenApple greenApple = new GreenApple();
@@ -112,7 +127,9 @@ public class MyWorld extends World
         int x = (800);
         addObject(greenApple,x,y);
     }
-    
+    //
+    //create the snake class
+    //
     public void createSnake()
     {
         Snake snake = new Snake();
@@ -120,14 +137,29 @@ public class MyWorld extends World
         int x = (800);
         addObject(snake,x,y);
     }
-
+    //this class to change the world
     public void act()
     {
+        //to change the world
+        if(score < 0)
+        {
+            GameOver world = new GameOver();
+            Greenfoot.setWorld(world);
+            Background.pause();
+        }
+        //to change the world
+        if(Greenfoot.isKeyDown("f"))
+        {
+            GameOver world = new GameOver();
+            Greenfoot.setWorld(world);
+            Background.pause();
+        }
+        //to change the world
         if(Greenfoot.isKeyDown("space"))
         {
             MyWorld gameWorld = new MyWorld();
             Greenfoot.setWorld(gameWorld);
+            Background.pause();
         }
     }
-    
 }

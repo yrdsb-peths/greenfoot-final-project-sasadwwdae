@@ -16,6 +16,7 @@ public class Banana extends Actor
     public void act()
     {
         // Add your action code here.
+        //let banana move
         setLocation(getX()-speed,getY());
     }
 }
